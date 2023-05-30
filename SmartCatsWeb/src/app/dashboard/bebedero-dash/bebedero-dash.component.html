@@ -1,0 +1,34 @@
+<div style="margin-top: 2%;">
+  <h2><strong>Estadísticas de uso</strong></h2>
+  <div>
+    <div style="display: block" *ngIf= "barChartDataBebedero.length > 0">
+      <canvas baseChart
+        [datasets]="barChartDataBebedero"
+        [options]="barChartOptionsBebedero"
+        [labels]="barChartLabelsBebedero"
+        [legend]="barChartLegendBebedero"
+        [type]="barChartTypeBebedero">
+      </canvas>
+    </div>
+    <div *ngIf = "barChartDataBebedero.length == 0">
+      <label> NO SE ENCONTRÓ INFORMACIÓN</label>
+    </div>
+  </div>
+</div>
+<div style="margin-top: 1%;">
+  <h2><strong>Estado del tanque de almacenamiento</strong></h2>
+  <div>
+    <div style="display: block" *ngIf= "barChartDataBebederoTanque.length > 0">
+      <canvas baseChart
+        [datasets]="barChartDataBebederoTanque"
+        [options]="barChartOptionsBebederoTanque"
+        [labels]="barChartLabelsBebederoTanque"
+        [legend]="barChartLegendBebederoTanque"
+        [type]="barChartTypeBebederoTanque">
+      </canvas>
+    </div>
+    <div *ngIf = "barChartDataBebederoTanque.length == 0">
+      <label> NO SE ENCONTRÓ INFORMACIÓN</label>
+    </div>
+  </div>
+</div>

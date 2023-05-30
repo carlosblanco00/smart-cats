@@ -1,0 +1,23 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav>
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item (click)="navegacion(0)" (click)="sidenav.toggle()">DashBoard</a>
+      <a mat-list-item (click)="navegacion(1)" (click)="sidenav.toggle()">Configuración</a>
+      <a mat-list-item (click)="sidenav.toggle()">Otro</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar style="background-color: black;">
+      <button  mat-icon-button
+        aria-label="Menu"
+        (click)="sidenav.open()">
+        <mat-icon style="color: aliceblue;">menu</mat-icon>
+      </button>
+      <span style="color: aliceblue;"><strong>Smart Cats</strong></span>
+      <a style="margin-left: 1%;"><img src="../../../../assets/img/Huellas.PNG" height="50"></a>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
