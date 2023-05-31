@@ -1,5 +1,33 @@
 <div class="grid-container">
   <h1 class="mat-h1">Dashboard</h1>
+    <mat-grid-list cols="1" rowHeight="1:0.1">
+      <mat-grid-tile>
+        <mat-card class="dashboard-card" style="background-color: rgb(189 189 189 / 17%);">
+          <mat-card-header>
+            <mat-card-title> DATOS GENERALES </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <div style="display: flex; margin-top: 1%;">
+              <div style="width: 20%; justify-content: left;">
+                <label>Nombre: {{datosGato.nombre}}</label>
+              </div>
+              <div style="width: 10%;">
+                <label for="">Edad: {{datosGato.edad}}</label>
+              </div>
+              <div style="width: 20%;">
+                <label for="">Raza: {{datosGato.raza}}</label>
+              </div>
+              <div style="width: 10%;">
+                <label for="">Peso: {{datosGato.peso}} Kg</label>
+              </div>
+              <div style="width: 20%;">
+                <label for="">Comida: {{datosGato.tipoComida}}</label>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+  </mat-grid-list>
   <mat-grid-list cols="3" rowHeight="1:2">
     <mat-grid-tile>
       <mat-card class="dashboard-card" style="background-color: rgb(189 189 189 / 17%);">
@@ -7,7 +35,7 @@
           <mat-card-title> COMEDERO </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <div><app-comedero-dash></app-comedero-dash></div>
+          <div><app-comedero-dash [data]="comedero"></app-comedero-dash></div>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
@@ -17,7 +45,7 @@
           <mat-card-title> BEBEDERO </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <div><app-comedero-dash></app-comedero-dash></div>
+          <div><app-bebedero-dash [data]="bebedero"></app-bebedero-dash></div>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
@@ -27,7 +55,7 @@
           <mat-card-title> ARENERO </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <div><app-arenero-dash></app-arenero-dash></div>
+          <div><app-arenero-dash [data]="arenero"></app-arenero-dash></div>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
