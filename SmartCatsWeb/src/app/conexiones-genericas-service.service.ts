@@ -1,17 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { movimientosDTO } from './dominios/movimientosDTO';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConexionesGenericasServiceService {
 
-  rutaApi = "";
+  rutaApi = "http://10.23.11.43:8080/api/smartcats";
 
   constructor(private http: HttpClient) {}
+  
+  getDatos(ruta: string) {
+    return this.http.get(`${this.rutaApi}/${ruta}`);
+  }
 
   get(ruta: string) {
-    return this.http.get(`${this.rutaApi}/${ruta}`);
+    return this.http.get<movimientosDTO[]>(`${this.rutaApi}/${ruta}`);
   }
 
   post(ruta: string, objeto: any) {

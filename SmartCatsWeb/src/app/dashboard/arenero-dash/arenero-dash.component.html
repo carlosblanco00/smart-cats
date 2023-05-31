@@ -1,4 +1,7 @@
 <div style="margin-top: 2%;">
+  <div style="text-align: end;">
+    <button mat-raised-button style="background-color: white;">Llenar</button>
+  </div>
   <h2><strong>Estadísticas de uso</strong></h2>
   <div>
     <div style="display: block" *ngIf= "barChartData.length > 0">
@@ -16,7 +19,7 @@
   </div>
 </div>
 <div style="margin-top: 1%;">
-  <h2><strong>Estado del tanque de almacenamiento</strong></h2>
+  <h2><strong>Estado del tanque de depósito</strong></h2>
   <div>
     <div style="display: block" *ngIf= "barChartDataTanque.length > 0">
       <canvas baseChart
